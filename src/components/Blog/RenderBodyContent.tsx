@@ -5,6 +5,9 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 import Image from "next/image";
 
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 // lazy-loaded image component
 const ImageComponent = ({ value, isInline }: any) => {
   const { width, height } = getImageDimensions(value);
@@ -31,9 +34,20 @@ const ImageComponent = ({ value, isInline }: any) => {
   );
 };
 
+const Code = ({ value }: any) => {
+  return (
+    <div className="my-10">
+      <SyntaxHighlighter language={value.language} style={dracula}>
+        {value.code}
+      </SyntaxHighlighter>
+    </div>
+  );
+};
+
 const components = {
   types: {
     image: ImageComponent,
+    code: Code,
   },
 };
 

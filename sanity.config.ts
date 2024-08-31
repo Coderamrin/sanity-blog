@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
-import {structureTool} from "sanity/structure";
+import { structureTool } from "sanity/structure";
 import schemas from "@/sanity/schemas";
-
+import { codeInput } from "@sanity/code-input";
 
 const config = defineConfig({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
@@ -9,7 +9,7 @@ const config = defineConfig({
   dataset: "production",
   apiVersion: "2023-06-18",
   basePath: "/admin",
-  plugins: [structureTool()],
+  plugins: [structureTool(), codeInput()],
   schema: { types: schemas },
 });
 
