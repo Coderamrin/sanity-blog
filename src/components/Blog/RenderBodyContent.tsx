@@ -44,10 +44,34 @@ const Code = ({ value }: any) => {
   );
 };
 
+const Table = ({ value }: any) => {
+  return (
+    <div className="my-10">
+      <table>
+        <tbody>
+          {value.rows.map((row: any) => (
+            <tr key={row._key}>
+              {row.cells.map((cell: any, key: any) => (
+                <td
+                  key={key}
+                  className="first-of-type:bg-gray-100 max-w-[100px]"
+                >
+                  <span className="px-4">{cell}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
 const components = {
   types: {
     image: ImageComponent,
     code: Code,
+    table: Table,
   },
 };
 

@@ -88,6 +88,15 @@ const blockContent = {
         withFilename: false,
       },
     },
+
+    {
+      type: "table",
+      name: "table",
+      title: "Table",
+      options: {
+        withFilename: false,
+      },
+    },
   ],
 };
 export default blockContent;

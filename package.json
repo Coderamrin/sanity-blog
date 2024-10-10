@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/code-input": "^4.1.4",
+    "@sanity/table": "^1.1.2",
     "next": "14.2.3",
     "next-sanity": "^9.3.10",
     "react": "^18",
